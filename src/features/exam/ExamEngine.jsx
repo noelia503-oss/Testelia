@@ -11,6 +11,7 @@ export const ExamEngine = ({
     onFinish,
     theoryText = null,
     pdfUrl = null,
+    pdfBlob = null, // Added pdfBlob prop
 }) => {
     const question = questions[currentIdx];
     const total = questions.length;
@@ -177,6 +178,7 @@ export const ExamEngine = ({
                 theoryText={theoryText}
                 questionText={question.text}
                 pdfUrl={pdfUrl}
+                pdfBlob={pdfBlob}
             />
         </>
     );

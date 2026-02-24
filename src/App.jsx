@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, BookOpen, CheckCircle, ChevronRight, ChevronLeft, RotateCcw, Folder, FileText, Trash2, Plus, Menu, Sun, Moon, X as CloseIcon } from 'lucide-react';
 import { parsePDF, parsePDFLight, parseQuestions } from './features/parser/pdfParser';
+import { parseWord } from './features/parser/wordParser';
 import { ExamEngine } from './features/exam/ExamEngine';
 import localforage from 'localforage';
 import './App.css';
@@ -78,6 +79,8 @@ function App() {
         content = content.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
         content = content.replace(/\xA0/g, ' '); // Purga de non-breaking spaces
         text = content;
+      } else if (file.name.toLowerCase().endsWith('.docx')) {
+        text = await parseWord(file);
       } else {
         text = await parsePDF(file);
       }
@@ -265,7 +268,7 @@ function App() {
                 <ChevronLeft size={16} />
               </button>
 
-              <div key={`counter-${currentIdx}`} style={{ fontSize: '0.85rem', color: '#3b82f6', fontWeight: '800', padding: '0 0.8rem', minWidth: '70px', textAlign: 'center' }}>
+              <div key={`counter - ${currentIdx} `} style={{ fontSize: '0.85rem', color: '#3b82f6', fontWeight: '800', padding: '0 0.8rem', minWidth: '70px', textAlign: 'center' }}>
                 {currentIdx + 1} / {questions.length}
               </div>
 
@@ -516,6 +519,7 @@ function App() {
             onFinish={handleFinish}
             theoryText={activeTheoryText}
             pdfUrl={activePDFUrl}
+            pdfBlob={activePDFBlob}
           />
         </React.Fragment>
       )}

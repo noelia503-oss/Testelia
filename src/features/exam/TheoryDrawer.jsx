@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { BookOpen, X, ChevronRight } from 'lucide-react';
 import { findRelevantParagraph } from './theorySearcher';
+import { parseWordToHtml } from '../parser/wordParser';
 
 /**
  * Highlight keywords in a paragraph text with high contrast.
@@ -31,11 +32,13 @@ function HighlightedText({ text, keywords }) {
     );
 }
 
-export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
+export function TheoryDrawer({ theoryText, questionText, pdfUrl = null, pdfBlob = null }) {
     const [isOpen, setIsOpen] = useState(false);
     const [result, setResult] = useState(null);
     const [isSearching, setIsSearching] = useState(false);
-    const [viewMode, setViewMode] = useState('text'); // 'text' | 'pdf'
+    const [viewMode, setViewMode] = useState('text'); // 'text' | 'doc'
+    const [docHtml, setDocHtml] = useState(null);
+    const [isDocLoading, setIsDocLoading] = useState(false);
     const drawerRef = useRef(null);
 
     // Reset when changing question
@@ -57,7 +60,27 @@ export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
         }
     };
 
-    if (!theoryText && !pdfUrl) return null;
+    const handleLoadDoc = async () => {
+        if (viewMode === 'doc' || !pdfBlob) return;
+
+        setIsDocLoading(true);
+        try {
+            // Detección: si el nombre del blob termina en .docx, convertimos a HTML
+            if (pdfBlob.name && pdfBlob.name.toLowerCase().endsWith('.docx')) {
+                const html = await parseWordToHtml(pdfBlob);
+                setDocHtml(html);
+            }
+            setViewMode('doc');
+        } catch (e) {
+            console.error("Error al cargar documento:", e);
+        } finally {
+            setIsDocLoading(false);
+        }
+    };
+
+    if (!theoryText && !pdfUrl && !pdfBlob) return null;
+
+    const isWordFile = pdfBlob && pdfBlob.name && pdfBlob.name.toLowerCase().endsWith('.docx');
 
     return (
         <>
@@ -86,7 +109,7 @@ export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
                 }}
             >
                 <BookOpen size={16} strokeWidth={2} />
-                {isSearching ? '...' : (pdfUrl ? 'Material' : 'Explicación')}
+                {isSearching ? '...' : (pdfBlob || pdfUrl ? 'Material' : 'Explicación')}
                 {isOpen && <ChevronRight size={14} style={{ marginLeft: '-2px' }} />}
             </button>
 
@@ -132,7 +155,7 @@ export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
                         <BookOpen size={20} color="var(--color-primary)" strokeWidth={2.5} />
                         <div>
                             <h2 style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--color-text)', margin: 0 }}>
-                                {viewMode === 'pdf' ? 'Documento PDF' : 'Teoría'}
+                                {viewMode === 'doc' ? (isWordFile ? 'Documento Word' : 'Documento PDF') : 'Teoría'}
                             </h2>
                         </div>
                     </div>
@@ -149,8 +172,8 @@ export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
                     </button>
                 </div>
 
-                {/* Selector de Modo (Texto / PDF) si hay PDF disponible */}
-                {pdfUrl && (
+                {/* Selector de Modo (Texto / PDF / Word) */}
+                {(pdfUrl || pdfBlob) && (
                     <div style={{
                         display: 'flex', padding: '0.5rem 1.5rem',
                         gap: '0.5rem', borderBottom: '1px solid var(--glass-border)',
@@ -169,16 +192,16 @@ export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
                             Texto
                         </button>
                         <button
-                            onClick={() => setViewMode('pdf')}
+                            onClick={handleLoadDoc}
                             style={{
                                 flex: 1, padding: '6px', borderRadius: '8px', border: 'none',
                                 fontSize: '0.75rem', fontWeight: '600', cursor: 'pointer',
-                                background: viewMode === 'pdf' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-                                color: viewMode === 'pdf' ? 'var(--color-primary)' : 'var(--color-text-muted)',
+                                background: viewMode === 'doc' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
+                                color: viewMode === 'doc' ? 'var(--color-primary)' : 'var(--color-text-muted)',
                                 transition: 'all 0.2s ease'
                             }}
                         >
-                            PDF
+                            {isDocLoading ? '...' : (isWordFile ? 'Word' : 'PDF')}
                         </button>
                     </div>
                 )}
@@ -186,18 +209,25 @@ export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
                 {/* Contenido con scroll */}
                 <div ref={drawerRef} style={{
                     overflowY: 'auto',
-                    padding: viewMode === 'pdf' ? '0' : '1.5rem',
+                    padding: viewMode === 'doc' ? (isWordFile ? '1.5rem' : '0') : '1.5rem',
                     flex: 1,
                     lineHeight: '1.8',
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                    {viewMode === 'pdf' ? (
-                        <iframe
-                            src={pdfUrl}
-                            style={{ width: '100%', height: '100%', border: 'none' }}
-                            title="Visor PDF"
-                        />
+                    {viewMode === 'doc' ? (
+                        isWordFile ? (
+                            <div
+                                style={{ fontSize: '0.9rem', color: 'var(--color-text)' }}
+                                dangerouslySetInnerHTML={{ __html: docHtml || '<div style="opacity:0.6; padding:2rem; text-align:center;">Cargando documento...</div>' }}
+                            />
+                        ) : (
+                            <iframe
+                                src={pdfUrl}
+                                style={{ width: '100%', height: '100%', border: 'none' }}
+                                title="Visor"
+                            />
+                        )
                     ) : (
                         result ? (
                             result.score === 0 ? (
