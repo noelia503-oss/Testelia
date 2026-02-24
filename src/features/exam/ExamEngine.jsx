@@ -10,6 +10,7 @@ export const ExamEngine = ({
     setAnswers,
     onFinish,
     theoryText = null,
+    pdfUrl = null,
 }) => {
     const question = questions[currentIdx];
     const total = questions.length;
@@ -172,7 +173,11 @@ export const ExamEngine = ({
             </main>
 
             {/* Cajón de teoría desplegable */}
-            <TheoryDrawer theoryText={theoryText} questionText={question.text} />
+            <TheoryDrawer
+                theoryText={theoryText}
+                questionText={question.text}
+                pdfUrl={pdfUrl}
+            />
         </>
     );
 };

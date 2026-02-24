@@ -31,15 +31,15 @@ function HighlightedText({ text, keywords }) {
     );
 }
 
-export function TheoryDrawer({ theoryText, questionText }) {
+export function TheoryDrawer({ theoryText, questionText, pdfUrl = null }) {
     const [isOpen, setIsOpen] = useState(false);
     const [result, setResult] = useState(null);
     const [isSearching, setIsSearching] = useState(false);
+    const [viewMode, setViewMode] = useState('text'); // 'text' | 'pdf'
     const drawerRef = useRef(null);
 
     // Reset when changing question
     useEffect(() => {
-        setIsOpen(false);
         setResult(null);
     }, [questionText]);
 
@@ -57,7 +57,7 @@ export function TheoryDrawer({ theoryText, questionText }) {
         }
     };
 
-    if (!theoryText) return null;
+    if (!theoryText && !pdfUrl) return null;
 
     return (
         <>
@@ -86,7 +86,7 @@ export function TheoryDrawer({ theoryText, questionText }) {
                 }}
             >
                 <BookOpen size={16} strokeWidth={2} />
-                {isSearching ? '...' : 'Explicación'}
+                {isSearching ? '...' : (pdfUrl ? 'Material' : 'Explicación')}
                 {isOpen && <ChevronRight size={14} style={{ marginLeft: '-2px' }} />}
             </button>
 
@@ -132,7 +132,7 @@ export function TheoryDrawer({ theoryText, questionText }) {
                         <BookOpen size={20} color="var(--color-primary)" strokeWidth={2.5} />
                         <div>
                             <h2 style={{ fontSize: '1rem', fontWeight: '700', color: 'var(--color-text)', margin: 0 }}>
-                                Explicación Teórica
+                                {viewMode === 'pdf' ? 'Documento PDF' : 'Teoría'}
                             </h2>
                         </div>
                     </div>
@@ -149,38 +149,82 @@ export function TheoryDrawer({ theoryText, questionText }) {
                     </button>
                 </div>
 
+                {/* Selector de Modo (Texto / PDF) si hay PDF disponible */}
+                {pdfUrl && (
+                    <div style={{
+                        display: 'flex', padding: '0.5rem 1.5rem',
+                        gap: '0.5rem', borderBottom: '1px solid var(--glass-border)',
+                        background: 'rgba(128, 128, 128, 0.02)'
+                    }}>
+                        <button
+                            onClick={() => setViewMode('text')}
+                            style={{
+                                flex: 1, padding: '6px', borderRadius: '8px', border: 'none',
+                                fontSize: '0.75rem', fontWeight: '600', cursor: 'pointer',
+                                background: viewMode === 'text' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
+                                color: viewMode === 'text' ? 'var(--color-primary)' : 'var(--color-text-muted)',
+                                transition: 'all 0.2s ease'
+                            }}
+                        >
+                            Texto
+                        </button>
+                        <button
+                            onClick={() => setViewMode('pdf')}
+                            style={{
+                                flex: 1, padding: '6px', borderRadius: '8px', border: 'none',
+                                fontSize: '0.75rem', fontWeight: '600', cursor: 'pointer',
+                                background: viewMode === 'pdf' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
+                                color: viewMode === 'pdf' ? 'var(--color-primary)' : 'var(--color-text-muted)',
+                                transition: 'all 0.2s ease'
+                            }}
+                        >
+                            PDF
+                        </button>
+                    </div>
+                )}
+
                 {/* Contenido con scroll */}
                 <div ref={drawerRef} style={{
                     overflowY: 'auto',
-                    padding: '1.5rem',
+                    padding: viewMode === 'pdf' ? '0' : '1.5rem',
                     flex: 1,
                     lineHeight: '1.8',
+                    display: 'flex',
+                    flexDirection: 'column'
                 }}>
-                    {result ? (
-                        result.score === 0 ? (
-                            <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-                                <div style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                                    No hemos encontrado una coincidencia exacta para esta pregunta, pero aquí tienes el contexto general:
+                    {viewMode === 'pdf' ? (
+                        <iframe
+                            src={pdfUrl}
+                            style={{ width: '100%', height: '100%', border: 'none' }}
+                            title="Visor PDF"
+                        />
+                    ) : (
+                        result ? (
+                            result.score === 0 ? (
+                                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+                                    <div style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+                                        No hemos encontrado una coincidencia exacta para esta pregunta, pero aquí tienes el contexto general:
+                                    </div>
+                                    <p style={{ textAlign: 'left', color: 'var(--color-text)', fontSize: '0.95rem', background: 'rgba(128,128,128,0.05)', padding: '1.25rem', borderRadius: '12px' }}>
+                                        {result.text.substring(0, 1000)}...
+                                    </p>
                                 </div>
-                                <p style={{ textAlign: 'left', color: 'var(--color-text)', fontSize: '0.95rem', background: 'rgba(128,128,128,0.05)', padding: '1.25rem', borderRadius: '12px' }}>
-                                    {result.text.substring(0, 1000)}...
-                                </p>
-                            </div>
+                            ) : (
+                                <div style={{
+                                    fontSize: '0.95rem',
+                                    color: 'var(--color-text)',
+                                    whiteSpace: 'pre-wrap',
+                                    fontWeight: '400',
+                                }}>
+                                    <HighlightedText text={result.text} keywords={result.keywords} />
+                                </div>
+                            )
                         ) : (
-                            <div style={{
-                                fontSize: '0.95rem',
-                                color: 'var(--color-text)',
-                                whiteSpace: 'pre-wrap',
-                                fontWeight: '400',
-                            }}>
-                                <HighlightedText text={result.text} keywords={result.keywords} />
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: '1rem' }}>
+                                <div className="animate-pulse" style={{ width: '40px', height: '40px', borderRadius: '50%', border: '3px solid var(--color-primary)', borderTopColor: 'transparent', animation: 'spin 1s linear infinite' }} />
+                                <div style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>Buscando en el temario...</div>
                             </div>
                         )
-                    ) : (
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', gap: '1rem' }}>
-                            <div className="animate-pulse" style={{ width: '40px', height: '40px', borderRadius: '50%', border: '3px solid var(--color-primary)', borderTopColor: 'transparent', animation: 'spin 1s linear infinite' }} />
-                            <div style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>Buscando en el temario...</div>
-                        </div>
                     )}
                 </div>
 

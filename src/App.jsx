@@ -24,6 +24,7 @@ function App() {
   const [answers, setAnswers] = useState({});
   const [activeExamTitle, setActiveExamTitle] = useState("");
   const [activeTheoryText, setActiveTheoryText] = useState(null); // Texto de teoría del examen activo
+  const [activePDFUrl, setActivePDFUrl] = useState(null); // URL del PDF original si existe
 
   // Estados de carga y formulario de subida
   const [isLoading, setIsLoading] = useState(false);
@@ -89,7 +90,8 @@ function App() {
         title: file.name.replace('.pdf', ''),
         promo: uploadType === 'promo' ? 'Nueva Promoción' : 'Temario General',
         tema: uploadType === 'tema' ? 'Nuevo Tema' : 'Test Global',
-        parsedQuestions: parsed
+        parsedQuestions: parsed,
+        pdfBlob: file // Guardamos el archivo original
       });
       setMode('upload');
     } catch (err) {
@@ -116,6 +118,7 @@ function App() {
       date: new Date().toLocaleDateString(),
       questions: uploadData.parsedQuestions,
       theoryText: uploadData.theoryText || null,
+      pdfBlob: uploadData.pdfBlob || null,
     };
 
     const updatedLibrary = [...library, newExam];
@@ -141,6 +144,15 @@ function App() {
     setQuestions(exam.questions);
     setActiveExamTitle(exam.title);
     setActiveTheoryText(exam.theoryText || null);
+
+    // Generar URL para el visor PDF si existe el blob
+    if (exam.pdfBlob) {
+      const url = URL.createObjectURL(exam.pdfBlob);
+      setActivePDFUrl(url);
+    } else {
+      setActivePDFUrl(null);
+    }
+
     setCurrentIdx(0);
     setAnswers({});
     setMode('exam');
@@ -242,7 +254,8 @@ function App() {
                 onClick={goToPrev}
                 disabled={currentIdx === 0}
                 style={{
-                  background: 'rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.1)',
+                  background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.3)',
+                  boxShadow: currentIdx === 0 ? 'none' : '0 0 12px rgba(59, 130, 246, 0.25)',
                   padding: '6px', borderRadius: '8px', cursor: currentIdx === 0 ? 'not-allowed' : 'pointer',
                   display: 'flex', alignItems: 'center', color: '#000000',
                   opacity: currentIdx === 0 ? 0.2 : 0.8
@@ -260,7 +273,8 @@ function App() {
                 <button
                   onClick={goToNext}
                   style={{
-                    background: 'rgba(0,0,0,0.05)', border: '1px solid rgba(0,0,0,0.1)',
+                    background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.3)',
+                    boxShadow: '0 0 12px rgba(59, 130, 246, 0.25)',
                     padding: '6px', borderRadius: '8px', cursor: 'pointer',
                     display: 'flex', alignItems: 'center', color: '#000000',
                     opacity: 0.8
@@ -291,12 +305,15 @@ function App() {
       {/* MENÚ LATERAL DESPLEGABLE */}
       {isMenuOpen && (
         <div style={{
-          position: 'fixed', top: '50px', left: 0, bottom: 0, width: '280px',
-          background: 'var(--nav-bg)', backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          borderRight: '1px solid var(--glass-border)', zIndex: 999,
-          padding: '2rem 1rem', boxShadow: '4px 0 20px rgba(0,0,0,0.1)',
-          display: 'flex', flexDirection: 'column', gap: '0.5rem'
+          position: 'fixed', top: '50px', left: 0, bottom: 0, width: '220px',
+          background: 'var(--nav-bg)', backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          borderRight: '1px solid var(--glass-border)',
+          zIndex: 1000, padding: '1.5rem',
+          transform: isMenuOpen ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+          display: 'flex', flexDirection: 'column', gap: '1rem',
+          boxShadow: isMenuOpen ? '10px 0 30px rgba(0,0,0,0.2)' : 'none'
         }}>
           <div style={{ fontSize: '0.8rem', fontWeight: 'bold', color: 'var(--color-text-muted)', textTransform: 'uppercase', marginBottom: '1rem', paddingLeft: '1rem' }}>
             Navegación
@@ -498,6 +515,7 @@ function App() {
             setAnswers={setAnswers}
             onFinish={handleFinish}
             theoryText={activeTheoryText}
+            pdfUrl={activePDFUrl}
           />
         </React.Fragment>
       )}
