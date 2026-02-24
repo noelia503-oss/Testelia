@@ -1,0 +1,180 @@
+QMATCH FALLÓ PARA: 
+
+QMATCH FALLÓ PARA: 
+
+QMATCH FALLÓ PARA: 
+
+QMATCH FALLÓ PARA: 
+
+[
+  {
+    "id": "1",
+    "originalId": "1",
+    "text": "Respecto al consejo consultivo de la autoridad vasca de protección de datos, es cierto que:",
+    "options": [
+      {
+        "id": "0",
+        "label": "a",
+        "text": "En el consejo habrá una persona representante de las personas consumidoras y usuarias, designada por Kontsumobide."
+      },
+      {
+        "id": "1",
+        "label": "b",
+        "text": "Se procurará que la composición del consejo consultivo tenga representación equilibrada entre mujeres y hombres."
+      },
+      {
+        "id": "2",
+        "label": "c",
+        "text": "En todo caso, los acuerdos adoptados por el consejo consultivo tendrán carácter vinculante."
+      },
+      {
+        "id": "3",
+        "label": "d",
+        "text": "En el consejo habrá una persona en representación de los tres territorios vascos."
+      }
+    ],
+    "correctAnswer": "0"
+  },
+  {
+    "id": "2",
+    "originalId": "2",
+    "text": "La propuesta del Gobierno Vasco al Parlamento Vasco de la persona idónea para presidir la Autoridad deberá ser aprobada por:",
+    "options": [
+      {
+        "id": "0",
+        "label": "a",
+        "text": "Mayoría simple del pleno del Parlamento Vasco."
+      },
+      {
+        "id": "1",
+        "label": "b",
+        "text": "Mayoría absoluta del pleno del Parlamento Vasco."
+      },
+      {
+        "id": "2",
+        "label": "c",
+        "text": "Mayoría simple de la comisión competente del Parlamento Vasco."
+      },
+      {
+        "id": "3",
+        "label": "d",
+        "text": "Mayoría absoluta de la comisión competente del Parlamento Vasco."
+      }
+    ],
+    "correctAnswer": "3"
+  },
+  {
+    "id": "3",
+    "originalId": "3",
+    "text": "Como resultado de los planes de auditoría, las directrices dictadas por la presidencia:",
+    "options": [
+      {
+        "id": "0",
+        "label": "a",
+        "text": "En ningún caso serán vinculantes."
+      },
+      {
+        "id": "1",
+        "label": "b",
+        "text": "Serán en todo caso, de obligado cumplimiento."
+      },
+      {
+        "id": "2",
+        "label": "c",
+        "text": "Serán de obligado cumplimiento siempre que los planes estén referidos a un determinado tipo de activida"
+      },
+      {
+        "id": "3",
+        "label": "d",
+        "text": ""
+      },
+      {
+        "id": "4",
+        "label": "d",
+        "text": "Serán de obligado cumplimiento siempre que vayan dirigidas a un responsable concreto."
+      }
+    ],
+    "correctAnswer": "1"
+  },
+  {
+    "id": "4",
+    "originalId": "4",
+    "text": "La presidencia de la autoridad vasca de protección de datos tendrá la consideración de alto cargo, asimilado al de:",
+    "options": [
+      {
+        "id": "0",
+        "label": "a",
+        "text": "Consejero o consejer"
+      },
+      {
+        "id": "1",
+        "label": "a",
+        "text": ""
+      },
+      {
+        "id": "2",
+        "label": "b",
+        "text": "Viceconsejero o viceconsejer"
+      },
+      {
+        "id": "3",
+        "label": "a",
+        "text": ""
+      },
+      {
+        "id": "4",
+        "label": "c",
+        "text": "Director o director"
+      },
+      {
+        "id": "5",
+        "label": "a",
+        "text": ""
+      },
+      {
+        "id": "6",
+        "label": "d",
+        "text": "Vicepresidente o vicepresident"
+      },
+      {
+        "id": "7",
+        "label": "a",
+        "text": ""
+      }
+    ],
+    "correctAnswer": "2"
+  },
+  {
+    "id": "5",
+    "originalId": "5",
+    "text": "Según el art. 3, ¿cómo se relaciona la Autoridad Vasca de Protección de Datos con el Gobierno Vasco?",
+    "options": [
+      {
+        "id": "0",
+        "label": "a",
+        "text": "A través del departamento competente en materia de justici"
+      },
+      {
+        "id": "1",
+        "label": "a",
+        "text": ""
+      },
+      {
+        "id": "2",
+        "label": "b",
+        "text": "A través de departamento competente en materia de administraciones públicas."
+      },
+      {
+        "id": "3",
+        "label": "c",
+        "text": "A través del servicio jurídico central del Gobierno Vasco."
+      },
+      {
+        "id": "4",
+        "label": "d",
+        "text": "A través del departamento que determine el lehendakari o la lehendakari en el decreto de áreas."
+      }
+    ],
+    "correctAnswer": "4"
+  }
+]

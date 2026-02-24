@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "text": "¿EN QUÉ FECHA Y LUGAR SE FIRMÓ LA DECLARACIÓN UNIV",
+    "optsCount": 4
+  },
+  {
+    "id": "2",
+    "text": "¿EN QUÉ FECHA ENTRÓ EN VIGOR LA ACTUAL CONSTITUCIÓ",
+    "optsCount": 4
+  },
+  {
+    "id": "3",
+    "text": "¿CON QUE LEY Y EN QUÉ FECHA FUERON ABOLIDOS LOS FU",
+    "optsCount": 4
+  },
+  {
+    "id": "4",
+    "text": "¿SUBEN EL ESTATUTO DE AUTONOMÍA DEL PAÍS VASCO QUÉ",
+    "optsCount": 4
+  },
+  {
+    "id": "5",
+    "text": "¿QUIÉNES ERAN EL PADRE Y LA HIJA QUE MOTIVARON LAS",
+    "optsCount": 4
+  },
+  {
+    "id": "6",
+    "text": "A LOS EFECTOS DE LA LEY ORGÁNICA 9/1983 REGULADORA",
+    "optsCount": 4
+  },
+  {
+    "id": "7",
+    "text": "¿QUIÉN SE ENCARGA DE NOMBRAR AL PRESIDENTE DEL TRI",
+    "optsCount": 4
+  },
+  {
+    "id": "8",
+    "text": "COMO SE CONSTITUYE EL NOMBRAMIENTO DE LA PRESIDENC",
+    "optsCount": 4
+  },
+  {
+    "id": "9",
+    "text": "QUÉ FIGURA EXISTE CUANDO DOS O MÁS PERSONAS SE CON",
+    "optsCount": 4
+  },
+  {
+    "id": "10",
+    "text": "SEGÚN LA LEY ORGÁNICA 9/1983 DE 15 DE JULIO, REGUL",
+    "optsCount": 4
+  },
+  {
+    "id": "11",
+    "text": "¿ACTUALMENTE CUÁNTOS PAÍSES MIEMBROS COMPONEN LA U",
+    "optsCount": 4
+  },
+  {
+    "id": "12",
+    "text": "¿CUÁL DE LAS SIGUIENTES DEFINICIONES SE AJUSTA MEJ",
+    "optsCount": 4
+  },
+  {
+    "id": "13",
+    "text": "¿SEGÚN LA LEY DE POLICÍA DEL PAÍS VASCOS CUÁNTOS A",
+    "optsCount": 4
+  },
+  {
+    "id": "14",
+    "text": "¿CUÁL ES EL LÍMITE DE LA PLANTILLA DE LAS PLAZAS T",
+    "optsCount": 4
+  },
+  {
+    "id": "15",
+    "text": "EXISTIRÁN COMISIONES DE COORDINACIÓN DE POLICÍA DE",
+    "optsCount": 4
+  },
+  {
+    "id": "16",
+    "text": "¿QUE NO SE DEBE HACER EN CASO SOSPECHA DE QUE EXIS",
+    "optsCount": 4
+  }
+]

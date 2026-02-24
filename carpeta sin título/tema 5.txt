@@ -1,0 +1,138 @@
+Ley 16/2023, de 21 de diciembre, de la Autoridad Vasca de Protección de Datos. Tema 5. CAPÍTULO I. Disposiciones generales. Artículo 1. Objeto..
+La presente ley tiene por objeto regular el control y supervisión de los tratamientos de datos de los que sean responsables los sujetos incluidos en su ámbito de aplicación.
+
+Asimismo, la presente ley tiene por objeto regular el régimen jurídico de la Autoridad Vasca de Protección de Datos.
+
+Artículo 2. Ámbito de aplicación..
+La presente ley será de aplicación a todos los tratamientos de datos personales de los que sean responsables: a) La Administración general de la Comunidad Autónoma del País Vasco, las administraciones forales de los territorios históricos y las administraciones locales del ámbito territorial de la Comunidad Autónoma del País Vasco, así como sus correspondientes administraciones institucionales y los entes integrantes de su respectivo sector público. b) Los entes integrantes del sector público previstos en los apartados 3 y 4 del artículo 4 de la Ley 3/2022, de 12 de mayo, del Sector Público Vasco. c) El Parlamento Vasco. d) Las juntas generales de los territorios históricos. e) El Tribunal Vasco de Cuentas Públicas. f) El Ararteko. g) Las entidades creadas por ley del Parlamento Vasco y las autoridades administrativas independientes. h) Los grupos parlamentarios del Parlamento Vasco, los grupos junteros de las juntas generales de los territorios históricos y los grupos municipales de los ayuntamientos. i) Las corporaciones de derecho público, representativas de intereses económicos y profesionales, cuyo ámbito territorial no exceda de la Comunidad Autónoma del País Vasco, así como las delegaciones de dichas corporaciones que, actuando con plena autonomía orgánica, funcional y económica para la realización de los fines, tuviesen un ámbito territorial que no excediera de dicha comunidad autónoma. j) La Universidad del País Vasco (UPV/EHU) y las demás universidades integrantes del Sistema Universitario Vasco, así como los entes de ellas dependientes. k) Consejo de Relaciones Laborales y Consejo Económico y Social Vasco. l) Las personas físicas o jurídicas, si el tratamiento se lleva a cabo para el ejercicio de funciones públicas en materias que sean competencia de las administraciones públicas enumeradas en la letra a). m) Las entidades de derecho privado que prestan servicios públicos mediante cualquier forma de gestión directa o indirecta, en lo que respecta a los tratamientos cuya finalidad se encuentre vinculada a la prestación de dichos servicios.
+
+
+Estarán igualmente sometidos a lo dispuesto en la presente ley las personas físicas o jurídicas, públicas o privadas que, como encargados del tratamiento, presten servicios a los responsables a los que se refieren el apartado 1 de este artículo.
+
+
+La presente ley no se aplicará a: a) Los tratamientos de datos de personas fallecidas, sin perjuicio de lo establecido en el artículo 3 de la Ley Orgánica 3/2018, de 5 de diciembre, y en el artículo 3 de la Ley Orgánica 7/2021, de 26 de mayo. b) Los tratamientos sometidos a la normativa sobre protección de materias clasificadas.
+
+
+CAPÍTULO II. La Autoridad Vasca de Protección de Datos. Sección 1.ª Organización y régimen jurídico.
+Artículo 3. Naturaleza y régimen jurídico..
+La Autoridad Vasca de Protección de Datos es una autoridad administrativa independiente, con personalidad jurídica propia y plena capacidad pública y privada, que actúa con plena independencia de las administraciones públicas en el ejercicio de sus funciones. La Autoridad Vasca de Protección de Datos se relaciona con el Gobierno Vasco a través del departamento que determine el lehendakari o la lehendakari en el decreto de áreas.
+
+
+
+La Autoridad Vasca de Protección de Datos tiene la condición de autoridad de control independiente a los efectos de lo dispuesto en el capítulo VI del Reglamento (UE) 2016/679 y en el capítulo VI de la Ley Orgánica 7/2021, de 26 de mayo.
+
+
+
+Los procedimientos tramitados por la Autoridad Vasca de Protección de Datos en el ejercicio de sus potestades de supervisión y control se someterán a la presente ley y a su normativa de desarrollo y, supletoriamente, cuando dichos procedimientos revistan carácter sancionador, a lo establecido en la normativa reguladora de la potestad sancionadora de las administraciones públicas de la Comunidad Autónoma del País Vasco.
+
+
+La representación y defensa en juicio de la Autoridad Vasca de Protección de Datos estará a cargo del Servicio Jurídico Central del Gobierno Vasco, conforme a lo dispuesto en sus normas reguladoras, siempre que no existan intereses contrapuestos con las administraciones u organismos públicos cuya representación legal o convencional ostente el Servicio Jurídico Central del Gobierno Vasco.
+
+
+Corresponde al Gobierno Vasco aprobar el Estatuto de la Autoridad Vasca de Protección de Datos, así como dictar cuantas disposiciones reglamentarias sean precisas para el desarrollo de la presente ley.
+
+
+
+Artículo 4. Régimen económico y presupuestario..
+La Autoridad Vasca de Protección de Datos elaborará y aprobará con carácter anual el correspondiente anteproyecto de presupuesto, y lo remitirá al Gobierno Vasco para que sea integrado, con la debida independencia, en los presupuestos generales de la Comunidad Autónoma, de acuerdo con la legislación reguladora del régimen presupuestario de la Comunidad Autónoma del País Vasco. Estará sometida a dicha legislación en lo relativo al régimen de modificación, ejecución y liquidación de su presupuesto, atendiendo a estos efectos a la naturaleza de la Autoridad.
+
+
+La Autoridad Vasca de Protección de Datos contará con recursos suficientes para el desempeño de sus funciones y ejercicio de sus potestades. Dichos recursos procederán de: a) Las asignaciones que se establezcan con cargo a los presupuestos generales de la Comunidad Autónoma. b) Las subvenciones y aportaciones que se concedan a su favor. c) Los bienes y valores que constituyan su patrimonio, así como los productos y rentas del mismo. d) Los ingresos, ordinarios y extraordinarios, derivados del ejercicio de sus actividades, incluidos los derivados del ejercicio de las potestades establecidas en el artículo 58 del Reglamento (UE) 2016/679, y en el artículo 50 de la Ley Orgánica 7/2021, de 26 de mayo. e) Cualesquiera otros que legalmente le pudieran ser atribuidos.
+
+
+Los ingresos procedentes o derivados del ejercicio de las actividades y potestades que la presente ley atribuye a la Autoridad Vasca de Protección de Datos se destinarán por esta a la dotación de sus reservas.
+
+
+La Autoridad Vasca de Protección de Datos estará sometida al control económico-financiero y de gestión de la Comunidad Autónoma del País Vasco, así como a la fiscalización del Tribunal Vasco de Cuentas Públicas.
+
+
+Artículo 5. Régimen de personal..
+El personal al servicio de la Autoridad Vasca de Protección de Datos será funcionario, y se regirá por la legislación reguladora de la función pública vasca.
+
+La relación de puestos de trabajo de la Autoridad Vasca de Protección de Datos será aprobada por resolución de su presidencia y entrará en vigor el día de su publicación en el «Boletín Oficial del País Vasco».
+
+
+Corresponde a la Autoridad Vasca de Protección de Datos determinar el régimen de acceso a sus puestos de trabajo, los requisitos y las características de las pruebas de selección, así como la convocatoria, gestión y resolución de los procedimientos de provisión de puestos de trabajo y promoción profesional.
+
+
+El personal de la Autoridad Vasca de Protección de Datos estará obligado a guardar secreto sobre las informaciones que conozca en el ejercicio de sus funciones, incluso después de haber cesado en estas.
+
+
+Artículo 6. Funciones y potestades.. La Autoridad Vasca de Protección de Datos ejercerá las funciones establecidas y las potestades previstas, respectivamente, en los artículos 57 y 58 del Reglamento (UE) 2016/679, en los artículos 49 y 50 de la Ley Orgánica 7/2021, de 26 de mayo, así como las previstas en esta ley. Asimismo, ejercerá cuantas competencias le sean legalmente atribuidas.
+
+
+Artículo 7. Transparencia..
+Además de cumplir las exigencias establecidas en la normativa aplicable en materia de transparencia y acceso a la información pública, la Autoridad Vasca de Protección de Datos hará públicas a través de su página web las resoluciones de su presidencia que pongan término a los procedimientos relacionados con la vulneración de las disposiciones de protección de datos o con la atención de los derechos establecidos en los artículos 15 a 22 del Reglamento (UE) 2016/679, así como aquellas por las que se adopten cláusulas contractuales tipo para las transferencias internacionales de datos, se autoricen transferencias internacionales de datos, o se acrediten entidades de certificación.
+
+
+También hará públicas a través de su página web las resoluciones de su presidencia que pongan término a los procedimientos relacionados con la vulneración de las disposiciones de protección de datos, o con la atención de los derechos establecidos en los artículos 21, 22 y 23 de la Ley Orgánica 7/2021, de 26 de mayo. Cuando las resoluciones a las que se refiere el párrafo anterior traigan su causa de lo establecido en un dictamen del Comité Europeo de Protección de Datos, este será objeto de publicación junto con la resolución adoptada.
+
+
+Además, la Autoridad Vasca de Protección de Datos hará públicas a través de su página web: a) Las directrices generales que se adopten como consecuencia de la realización de planes de auditoría. b) Los informes preceptivos a disposiciones de carácter general evacuados conforme al apartado 4 del artículo 36 del Reglamento (UE) 2016/679. c) Los dictámenes por los que se dé respuesta a consultas que le hayan sido planteadas, en la medida en que supongan una interpretación de las normas de protección de datos que no haya sido previamente objeto de publicación. d) Los códigos de conducta aprobados por la Autoridad. e) Las restantes actuaciones que hayan de hacerse públicas conforme a la normativa de protección de datos personales.
+
+La difusión a la que se refieren los apartados anteriores se llevará a cabo previa disociación de los datos de carácter personal y respetando los límites establecidos en la legislación aplicable en materia de transparencia y acceso a la información pública.
+
+Sección 2.ª Órganos de la Autoridad Vasca de Protección de Datos.
+Artículo 8. Presidencia de la Autoridad Vasca de Protección de Datos..
+La presidencia de la Autoridad Vasca de Protección de Datos la dirige, ostenta su representación y dicta sus resoluciones, circulares y directrices. Los actos de la autoridad vasca que produzcan efectos jurídicos sobre terceros serán dictados por su presidencia.
+
+La presidencia de la Autoridad Vasca de Protección de Datos ejercerá sus funciones con plena independencia y objetividad, y no estará sujeta a instrucción alguna en el desempeño de aquellas.
+
+La presidencia de la Autoridad Vasca de Protección de Datos será nombrada por decreto del Gobierno Vasco por un período de cinco años, pudiendo ser renovada por un único período de igual duración. A tal efecto, el Gobierno Vasco propondrá al Parlamento Vasco la persona que considere idónea para presidir la Autoridad Vasca de Protección de Datos. Dicha persona poseerá la titulación, la experiencia y las aptitudes, en particular en el ámbito de la protección de datos personales, necesarias para el cumplimiento de sus funciones y el ejercicio de sus poderes.
+
+Recibida la propuesta por el Parlamento Vasco, se someterá a la comisión competente, que deberá aprobarla por mayoría absoluta. En caso de no obtenerse dicha mayoría se entenderá decaída la propuesta, y se devolverá al Gobierno Vasco.
+
+La presidencia de la Autoridad Vasca de Protección de Datos solo cesará antes de la expiración de su mandato por alguna de las siguientes causas: a) A petición propia. b) Por condena firme por delito doloso. c) Por incumplimiento grave de sus obligaciones. d) Por incapacidad sobrevenida para el ejercicio de su función. e) Por incompatibilidad. En los supuestos previstos en las letras c), d) y e) será necesaria la ratificación de la separación por mayoría absoluta de la Comisión de Instituciones, Gobernanza Pública y Seguridad del Parlamento Vasco.
+
+La presidencia de la Autoridad Vasca de Protección de Datos tendrá la consideración de alto cargo, asimilado al de viceconsejero o viceconsejera. Si con anterioridad a su nombramiento estuviera ocupando una plaza como funcionaria o funcionario público, quedará en situación de servicios especiales. En todo caso, le será de aplicación lo dispuesto en la Ley 1/2014, de 26 de junio, Reguladora del Código de Conducta y de los Conflictos de Intereses de los Cargos Públicos y su normativa de desarrollo.
+
+Los actos y disposiciones dictados por la presidencia de la Autoridad Vasca de Protección de Datos ponen fin a la vía administrativa, siendo recurribles, directamente, ante la jurisdicción contencioso-administrativa.
+
+La presidencia de la Autoridad Vasca de Protección de Datos, de conformidad con lo dispuesto en el artículo 59 del Reglamento General de Protección de Datos, elaborará un informe anual de sus actividades, que será comunicado al Parlamento Vasco, al Gobierno Vasco y a las demás autoridades de protección de datos del Estado. Este informe será publicado en su página web.
+
+Artículo 9. El Consejo Consultivo de la Autoridad Vasca de Protección de Datos..
+La presidencia de la Autoridad Vasca de Protección de Datos estará asesorada por un consejo consultivo compuesto por los siguientes miembros: a) Una persona representante del Parlamento Vasco, designada por este. b) Una persona representante de la Administración general de la Comunidad Autónoma del País Vasco, designada por el Gobierno Vasco. c) Una persona representante de cada uno de los territorios históricos vascos, designada por estos. d) Una persona representante de las entidades locales del ámbito territorial de la Comunidad Autónoma del País Vasco, designada por la Asociación de Municipios Vascos. e) Una persona representante de las personas consumidoras y usuarias, designada por Kontsumobide-Instituto Vasco de Consumo. f) Dos personas expertas, una en tecnologías de la información y otra en el ámbito del Derecho, con conocimientos acreditados en el Derecho y la práctica en materia de protección de datos, designadas de forma rotatoria por las universidades del Sistema Universitario Vasco. g) Una persona experta designada por Cyberzaintza, Agencia Vasca de Ciberseguridad.
+
+Se procurará que la composición del consejo consultivo tenga una representación equilibrada entre mujeres y hombres, con capacitación, competencia y preparación adecuada. A los efectos, se considera representación equilibrada cuando ambos sexos estén representados al menos al 40 %.
+
+El consejo consultivo se reunirá cuando así lo disponga la presidencia de la Autoridad Vasca de Protección de Datos y, en todo caso, una vez al semestre.
+
+Los acuerdos adoptados por el consejo consultivo no tendrán en ningún caso carácter vinculante. No obstante, será preceptiva la emisión de informe del consejo consultivo previo a la aprobación de circulares interpretativas de la ley y normativa de desarrollo que, en el ejercicio de la potestad normativa a la que alude el artículo 15 de esta ley, tiene atribuida la presidencia, sin perjuicio de que, igualmente, dichos informes carezcan de carácter vinculante.
+
+En lo no previsto en este artículo, el régimen, organización, competencias y funcionamiento del consejo consultivo se regulará por el Estatuto de la Autoridad Vasca de Protección de Datos.
+
+Artículo 10. Ámbito de la potestad de investigación..
+La Autoridad Vasca de Protección de Datos podrá, en ejercicio de sus potestades de investigación, realizar inspecciones periódicas o circunstanciales, de oficio o a instancia de las personas afectadas, de cualquiera de los tratamientos sometidos al ámbito de aplicación de esta ley.
+
+Asimismo, podrá desarrollar las citadas funciones con ocasión de la realización de un plan de auditoría, en los términos establecidos en el artículo 14 de la presente ley.
+
+Artículo 11. Personal competente para realizar la actividad de investigación..
+La actividad de investigación se llevará a cabo por el personal inspector de la Autoridad Vasca de Protección de Datos.
+
+No obstante, la presidencia de la Autoridad Vasca de Protección de Datos podrá habilitar expresamente a otro personal funcionario público para la realización de actividades de investigación. La habilitación indicará las actividades concretas de investigación a las que la misma se circunscribe.
+
+En los supuestos de actuaciones conjuntas de investigación conforme a lo dispuesto en el artículo 62 del Reglamento (UE) 2016/679, el personal de las autoridades de control de otros estados miembros de Unión Europea que colabore con la Autoridad Vasca de Protección de Datos ejercerá sus facultades con arreglo a lo previsto en la presente ley. Dicho personal actuará en presencia del personal de la Autoridad Vasca de Protección de Datos y bajo su orientación y dirección.
+
+El personal funcionario que desarrolle actividades de investigación tendrá a todos los efectos la condición de agente de la Autoridad Vasca de Protección de Datos en el ejercicio de sus funciones.
+
+Artículo 12. Alcance de la actividad de investigación..
+Quienes desarrollen la actividad de investigación podrán recabar las informaciones precisas para el cumplimiento de sus funciones. En particular, podrán: a) Acceder a los locales en que se encuentren los sistemas de información o se lleven materialmente a cabo los tratamientos de datos. b) Examinar los soportes de información que contengan los datos personales y obtener copia de los datos sometidos a tratamiento. c) Examinar, en el lugar en que se encuentren, los sistemas de información que traten datos personales, incluyendo los equipos físicos y lógicos en que se lleve a cabo el tratamiento. d) Requerir el envío de los programas y aplicaciones o de la documentación pertinente, a fin de analizar el tratamiento del que sean objeto los datos, y obtener copia de ellos. e) Requerir la ejecución de los programas, aplicaciones o procedimientos de gestión y soporte del tratamiento que se encuentren sujetos a investigación. f) Realizar auditorías de los sistemas de información, sistemas de decisión individual automatizada, sistemas de inteligencia artificial y sistemas algorítmicos, y de dispositivos, equipos o programas que faciliten el tratamiento de los datos, a fin de determinar su conformidad o no con la legislación vigente. g) Requerir la exhibición o remisión de cualquier otra información que resulte precisa para el ejercicio de las funciones inspectoras. h) Revisar las medidas técnicas y organizativas adoptadas en relación con los tratamientos.
+
+Cuando fuese necesario el acceso por el personal que desarrolla la actividad de investigación al domicilio, constitucionalmente protegido, de la persona inspeccionada, será preciso contar con su consentimiento o haber obtenido la correspondiente autorización judicial, respetando su inviolabilidad.
+
+Artículo 13. Deber de colaboración..
+Las administraciones públicas, incluidas las haciendas forales, así como las personas físicas o jurídicas, estén o no sometidos sus tratamientos a lo dispuesto en la presente ley, estarán obligados a proporcionar a la Autoridad Vasca de Protección de Datos los datos, informes, antecedentes y justificantes que fueren necesarios para llevar a cabo la actividad de investigación en el ámbito de sus competencias. Cuando la información contenga datos personales, la comunicación de dichos datos estará amparada por lo dispuesto en el artículo 6.1.c) del Reglamento (UE) 2016/679.
+
+La Autoridad Vasca de Protección de Datos tendrá, en el ámbito de sus competencias, las facultades previstas en los apartados 2 y 3 del artículo 52 de la Ley Orgánica 3/2018, de 5 de diciembre.
+
+Artículo 14. Planes de auditoría..
+La presidencia de la Autoridad Vasca de Protección de Datos podrá acordar la realización de planes de auditoría, referidos bien a un determinado ámbito de responsables o encargados del tratamiento sometidos a la aplicación de la presente ley, bien a un determinado tipo de actividad de tratamiento.
+
+Los planes de auditoría preventiva tendrán por objeto el análisis del cumplimiento de las disposiciones del Reglamento (UE) 2016/679 y la restante normativa en materia de protección de datos personales que resulte aplicable.
+
+Como resultado de los planes de auditoría, la presidencia de la Autoridad Vasca de Protección de Datos deberá dictar las directrices que resulten precisas para asegurar el pleno cumplimiento de las normas de protección de datos. Dichas directrices podrán ir dirigidas a la totalidad de los sujetos inspeccionados, o a un responsable o encargado del tratamiento concreto. Las directrices serán en todo caso de obligado cumplimiento.
+
+
+
+
+

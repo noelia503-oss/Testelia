@@ -1,0 +1,10 @@
+file:///Users/noeliatrujillocarrera/Desktop/APPTEST/src/features/parser/pdfParser.js:2
+import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
+       ^^^^^^^^^^^^
+SyntaxError: The requested module 'pdfjs-dist/build/pdf.worker.min.mjs?url' does not provide an export named 'default'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:213:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:320:5)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:606:24)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+
+Node.js v20.20.0
