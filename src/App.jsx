@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Upload, BookOpen, CheckCircle, ChevronRight, ChevronLeft, RotateCcw, Folder, FileText, Trash2, Plus, Menu, Sun, Moon, X as CloseIcon } from 'lucide-react';
+import { Upload, BookOpen, RotateCcw, Folder, FileText, Trash2, Plus, Menu, Sun, Moon, X as CloseIcon } from 'lucide-react';
 import { parsePDF, parsePDFLight, parseQuestions } from './features/parser/pdfParser';
 import { parseWord } from './features/parser/wordParser';
 import { ExamEngine } from './features/exam/ExamEngine';
@@ -264,60 +264,7 @@ function App() {
               <Trash2 size={18} color="#fca5a5" />
             </button>
           )}
-          {mode === 'exam' && (
-            <div style={{
-              position: 'absolute', left: '50%', transform: 'translateX(-50%)',
-              display: 'flex', alignItems: 'center', gap: '0.4rem'
-            }}>
-              <button
-                onClick={goToPrev}
-                disabled={currentIdx === 0}
-                style={{
-                  background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.3)',
-                  boxShadow: currentIdx === 0 ? 'none' : '0 0 12px rgba(59, 130, 246, 0.25)',
-                  padding: '6px', borderRadius: '8px', cursor: currentIdx === 0 ? 'not-allowed' : 'pointer',
-                  display: 'flex', alignItems: 'center', color: '#000000',
-                  opacity: currentIdx === 0 ? 0.2 : 0.8
-                }}
-                title="Anterior"
-              >
-                <ChevronLeft size={16} />
-              </button>
 
-              <div key={`counter - ${currentIdx} `} style={{ fontSize: '0.85rem', color: '#3b82f6', fontWeight: '800', padding: '0 0.8rem', minWidth: '70px', textAlign: 'center' }}>
-                {currentIdx + 1} / {questions.length}
-              </div>
-
-              {currentIdx < questions.length - 1 ? (
-                <button
-                  onClick={goToNext}
-                  style={{
-                    background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.3)',
-                    boxShadow: '0 0 12px rgba(59, 130, 246, 0.25)',
-                    padding: '6px', borderRadius: '8px', cursor: 'pointer',
-                    display: 'flex', alignItems: 'center', color: '#000000',
-                    opacity: 0.8
-                  }}
-                  title="Siguiente"
-                >
-                  <ChevronRight size={16} />
-                </button>
-              ) : (
-                <button
-                  onClick={handleFinish}
-                  style={{
-                    background: 'rgba(34, 197, 94, 0.2)', border: '1px solid rgba(34, 197, 94, 0.4)',
-                    padding: '6px 12px', borderRadius: '8px', cursor: 'pointer',
-                    display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.8rem', color: '#166534',
-                    fontWeight: 'bold'
-                  }}
-                  title="Finalizar"
-                >
-                  <CheckCircle size={14} /> Fin
-                </button>
-              )}
-            </div>
-          )}
         </div>
       </nav>
 

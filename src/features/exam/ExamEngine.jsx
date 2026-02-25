@@ -170,6 +170,66 @@ export const ExamEngine = ({
                             ⚠️ No se encontró la solución automática para esta pregunta.
                         </div>
                     )}
+
+                    {/* Botones de navegación */}
+                    <div style={{
+                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                        padding: '1rem 2.25rem 1.5rem',
+                        borderTop: '1px solid var(--glass-border)',
+                    }}>
+                        <button
+                            onClick={handlePrev}
+                            disabled={currentIdx === 0}
+                            style={{
+                                background: 'rgba(59, 130, 246, 0.05)', border: '1px solid rgba(59, 130, 246, 0.3)',
+                                boxShadow: currentIdx === 0 ? 'none' : '0 0 12px rgba(59, 130, 246, 0.25)',
+                                padding: '10px 16px', borderRadius: '10px',
+                                cursor: currentIdx === 0 ? 'not-allowed' : 'pointer',
+                                display: 'flex', alignItems: 'center', gap: '6px',
+                                color: 'var(--color-text)',
+                                opacity: currentIdx === 0 ? 0.3 : 0.9,
+                                fontSize: '0.85rem', fontWeight: '500',
+                                transition: 'all 0.2s ease',
+                            }}
+                        >
+                            <ChevronLeft size={16} /> Anterior
+                        </button>
+
+                        <div style={{ fontSize: '0.85rem', color: '#3b82f6', fontWeight: '800' }}>
+                            {currentIdx + 1} / {total}
+                        </div>
+
+                        {currentIdx < total - 1 ? (
+                            <button
+                                onClick={handleNext}
+                                style={{
+                                    background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.3)',
+                                    boxShadow: '0 0 12px rgba(59, 130, 246, 0.2)',
+                                    padding: '10px 16px', borderRadius: '10px', cursor: 'pointer',
+                                    display: 'flex', alignItems: 'center', gap: '6px',
+                                    color: 'var(--color-text)',
+                                    opacity: 0.9,
+                                    fontSize: '0.85rem', fontWeight: '500',
+                                    transition: 'all 0.2s ease',
+                                }}
+                            >
+                                Siguiente <ChevronRight size={16} />
+                            </button>
+                        ) : (
+                            <button
+                                onClick={onFinish}
+                                style={{
+                                    background: 'rgba(34, 197, 94, 0.15)', border: '1px solid rgba(34, 197, 94, 0.4)',
+                                    padding: '10px 16px', borderRadius: '10px', cursor: 'pointer',
+                                    display: 'flex', alignItems: 'center', gap: '6px',
+                                    fontSize: '0.85rem', color: '#22c55e', fontWeight: '600',
+                                    transition: 'all 0.2s ease',
+                                }}
+                            >
+                                <CheckCircle size={16} /> Finalizar
+                            </button>
+                        )}
+                    </div>
                 </div>
             </main>
 
