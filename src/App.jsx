@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Upload, BookOpen, RotateCcw, Folder, FileText, Trash2, Plus, Menu, Sun, Moon, X as CloseIcon } from 'lucide-react';
+import { Upload, BookOpen, RotateCcw, Folder, FileText, Trash2, Plus, Menu, Sun, Moon, X as CloseIcon, Timer } from 'lucide-react';
 import { parsePDF, parsePDFLight, parseQuestions } from './features/parser/pdfParser';
 import { parseWord } from './features/parser/wordParser';
 import { ExamEngine } from './features/exam/ExamEngine';
@@ -92,8 +92,8 @@ function App() {
       // En vez de empezar el examen, vamos a la pantalla de "Guardar"
       setUploadData({
         title: file.name.replace(/\.(pdf|docx|txt)$/i, ''),
-        promo: uploadType === 'promo' ? 'Nueva Promoción' : 'Temario General',
-        tema: uploadType === 'tema' ? 'Nuevo Tema' : 'Test Global',
+        promo: uploadType === 'promo' ? 'Nueva Promoción' : uploadType === 'simulacro' ? 'Simulacros' : 'Temario General',
+        tema: uploadType === 'tema' ? 'Nuevo Tema' : uploadType === 'simulacro' ? 'Simulacro' : 'Test Global',
         parsedQuestions: parsed,
         pdfBlob: file // Guardamos el archivo original
       });
@@ -323,16 +323,22 @@ function App() {
             </div>
 
             <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-              <button className="hover-scale glass-panel" onClick={() => triggerUpload('promo')} style={{ flex: '1 1 300px', padding: '2.5rem', fontSize: '1.1rem', background: 'rgba(128,128,128,0.03)', border: '1px solid var(--glass-border)', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', cursor: 'pointer', transition: 'all 0.3s ease', color: 'var(--color-text)' }}>
-                <FileText size={42} color="#3b82f6" strokeWidth={1.5} />
-                <span style={{ fontWeight: '600', fontSize: '1.2rem' }}>Examen de Promoción</span>
-                <span style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', fontWeight: '400' }}>Pruebas oficiales por convocatoria</span>
+              <button className="hover-scale glass-panel" onClick={() => triggerUpload('promo')} style={{ flex: '1 1 200px', maxWidth: '300px', padding: '2rem', fontSize: '1.1rem', background: 'rgba(128,128,128,0.03)', border: '1px solid var(--glass-border)', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem', cursor: 'pointer', transition: 'all 0.3s ease', color: 'var(--color-text)' }}>
+                <FileText size={36} color="#3b82f6" strokeWidth={1.5} />
+                <span style={{ fontWeight: '600', fontSize: '1.1rem' }}>Promoción</span>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', fontWeight: '400' }}>Pruebas oficiales</span>
               </button>
 
-              <button className="hover-scale glass-panel" onClick={() => triggerUpload('tema')} style={{ flex: '1 1 300px', padding: '2.5rem', fontSize: '1.1rem', background: 'rgba(128,128,128,0.03)', border: '1px solid var(--glass-border)', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', cursor: 'pointer', transition: 'all 0.3s ease', color: 'var(--color-text)' }}>
-                <Folder size={42} color="#10b981" strokeWidth={1.5} />
-                <span style={{ fontWeight: '600', fontSize: '1.2rem' }}>Test por Tema</span>
-                <span style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', fontWeight: '400' }}>Bloques específicos teóricos</span>
+              <button className="hover-scale glass-panel" onClick={() => triggerUpload('tema')} style={{ flex: '1 1 200px', maxWidth: '300px', padding: '2rem', fontSize: '1.1rem', background: 'rgba(128,128,128,0.03)', border: '1px solid var(--glass-border)', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem', cursor: 'pointer', transition: 'all 0.3s ease', color: 'var(--color-text)' }}>
+                <Folder size={36} color="#10b981" strokeWidth={1.5} />
+                <span style={{ fontWeight: '600', fontSize: '1.1rem' }}>Por Tema</span>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', fontWeight: '400' }}>Bloques teóricos</span>
+              </button>
+
+              <button className="hover-scale glass-panel" onClick={() => triggerUpload('simulacro')} style={{ flex: '1 1 200px', maxWidth: '300px', padding: '2rem', fontSize: '1.1rem', background: 'rgba(128,128,128,0.03)', border: '1px solid var(--glass-border)', borderRadius: '16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.8rem', cursor: 'pointer', transition: 'all 0.3s ease', color: 'var(--color-text)' }}>
+                <Timer size={36} color="#f59e0b" strokeWidth={1.5} />
+                <span style={{ fontWeight: '600', fontSize: '1.1rem' }}>Simulacro</span>
+                <span style={{ fontSize: '0.8rem', color: 'var(--color-text-muted)', fontWeight: '400' }}>Ensayo tipo examen</span>
               </button>
             </div>
             <input id="file-input" type="file" accept=".pdf,application/pdf,.txt,text/plain,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onChange={handleFileUpload} style={{ display: 'none' }} />
