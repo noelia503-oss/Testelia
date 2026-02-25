@@ -1,0 +1,44 @@
+[
+    {
+        "id": "p35-pdf",
+        "title": "Examen Promo 35 (PDF)",
+        "filename": "EXAMEN PROMO 35 PDF.pdf",
+        "type": "pdf"
+    },
+    {
+        "id": "p35-pages",
+        "title": "Examen Promo 35 (Pages)",
+        "filename": "Promo 35.pages",
+        "type": "pages"
+    },
+    {
+        "id": "p34-pdf",
+        "title": "Examen Promo 34 (PDF)",
+        "filename": "Promo 34 PDF.pdf",
+        "type": "pdf"
+    },
+    {
+        "id": "p29-pdf",
+        "title": "Examen Promo 29 (PDF)",
+        "filename": "Promo 29 PDF.pdf",
+        "type": "pdf"
+    },
+    {
+        "id": "tema5-mad",
+        "title": "Tema 5 MAD (PDF)",
+        "filename": "Tema 5 MAD PDF.pdf",
+        "type": "pdf"
+    },
+    {
+        "id": "tema7-mad",
+        "title": "Tema 7 MAD (PDF)",
+        "filename": "Tema 7 MAD PDF.pdf",
+        "type": "pdf"
+    },
+    {
+        "id": "tema8-mad",
+        "title": "Tema 8 MAD (PDF)",
+        "filename": "tema 8 MAD PDF.pdf",
+        "type": "pdf"
+    }
+]
