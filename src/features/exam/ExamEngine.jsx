@@ -237,19 +237,25 @@ export const ExamEngine = ({
                                 Siguiente <ChevronRight size={16} />
                             </button>
                         ) : (
-                            <button
-                                onClick={onFinish}
-                                style={{
-                                    background: 'rgba(34, 197, 94, 0.15)', border: '1px solid rgba(34, 197, 94, 0.4)',
-                                    padding: '10px 16px', borderRadius: '10px', cursor: 'pointer',
-                                    display: 'flex', alignItems: 'center', gap: '6px',
-                                    fontSize: '0.85rem', color: '#22c55e', fontWeight: '600',
-                                    transition: 'all 0.2s ease',
-                                }}
-                            >
-                                <CheckCircle size={16} /> Finalizar
-                            </button>
+                            <div style={{ width: '110px' }} />
                         )}
+                    </div>
+
+                    {/* Botón Finalizar siempre visible */}
+                    <div style={{ padding: '0 2.25rem 1.5rem', display: 'flex', justifyContent: 'center' }}>
+                        <button
+                            onClick={onFinish}
+                            style={{
+                                background: 'rgba(34, 197, 94, 0.08)', border: '1px solid rgba(34, 197, 94, 0.25)',
+                                padding: '8px 24px', borderRadius: '10px', cursor: 'pointer',
+                                display: 'flex', alignItems: 'center', gap: '6px',
+                                fontSize: '0.8rem', color: '#22c55e', fontWeight: '500',
+                                transition: 'all 0.2s ease',
+                                opacity: 0.7,
+                            }}
+                        >
+                            <CheckCircle size={14} /> Finalizar Test
+                        </button>
                     </div>
                 </div>
             </main>
