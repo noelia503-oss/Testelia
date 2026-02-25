@@ -26,6 +26,7 @@ function App() {
   const [activeExamTitle, setActiveExamTitle] = useState("");
   const [activeTheoryText, setActiveTheoryText] = useState(null); // Texto de teoría del examen activo
   const [activePDFUrl, setActivePDFUrl] = useState(null); // URL del PDF original si existe
+  const [activePDFBlob, setActivePDFBlob] = useState(null); // Blob del PDF original
 
   // Estados de carga y formulario de subida
   const [isLoading, setIsLoading] = useState(false);
@@ -90,7 +91,7 @@ function App() {
 
       // En vez de empezar el examen, vamos a la pantalla de "Guardar"
       setUploadData({
-        title: file.name.replace('.pdf', ''),
+        title: file.name.replace(/\.(pdf|docx|txt)$/i, ''),
         promo: uploadType === 'promo' ? 'Nueva Promoción' : 'Temario General',
         tema: uploadType === 'tema' ? 'Nuevo Tema' : 'Test Global',
         parsedQuestions: parsed,
@@ -150,10 +151,24 @@ function App() {
 
     // Generar URL para el visor PDF si existe el blob
     if (exam.pdfBlob) {
-      const url = URL.createObjectURL(exam.pdfBlob);
-      setActivePDFUrl(url);
+      try {
+        // IndexedDB puede devolver un objeto plano en vez de un Blob real.
+        // Reconstruimos el Blob si es necesario para que createObjectURL funcione.
+        let blob = exam.pdfBlob;
+        if (!(blob instanceof Blob)) {
+          blob = new Blob([blob], { type: 'application/pdf' });
+        }
+        const url = URL.createObjectURL(blob);
+        setActivePDFUrl(url);
+        setActivePDFBlob(blob);
+      } catch (err) {
+        console.warn('No se pudo crear URL del PDF:', err);
+        setActivePDFUrl(null);
+        setActivePDFBlob(null);
+      }
     } else {
       setActivePDFUrl(null);
+      setActivePDFBlob(null);
     }
 
     setCurrentIdx(0);
@@ -179,6 +194,7 @@ function App() {
     setAnswers({});
     setCurrentIdx(0);
     setActiveTheoryText(null);
+    setActivePDFBlob(null);
   };
 
   // Agrupar los exámenes para la vista de biblioteca
@@ -355,7 +371,7 @@ function App() {
                 <span style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', fontWeight: '400' }}>Bloques específicos teóricos</span>
               </button>
             </div>
-            <input id="file-input" type="file" accept=".pdf,application/pdf,.txt,text/plain" onChange={handleFileUpload} style={{ display: 'none' }} />
+            <input id="file-input" type="file" accept=".pdf,application/pdf,.txt,text/plain,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" onChange={handleFileUpload} style={{ display: 'none' }} />
           </div>
 
           {isLoading && <div style={{ textAlign: 'center', marginBottom: '2rem', color: '#3b82f6' }}>Procesando documento inteligente...</div>}
@@ -468,7 +484,7 @@ function App() {
                   {isLoadingTheory ? '⏳ Procesando PDF de teoría...' : '📂 Seleccionar PDF o TXT del temario'}
                   <input
                     type="file"
-                    accept=".pdf,application/pdf,.txt,text/plain"
+                    accept=".pdf,application/pdf,.txt,text/plain,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
                     style={{ display: 'none' }}
                     onChange={async (e) => {
                       const f = e.target.files[0];
