@@ -85,11 +85,6 @@ export const ExamEngine = ({
 
     const progress = ((currentIdx + 1) / total) * 100;
 
-    // Contadores en tiempo real
-    const correctCount = Object.keys(answers).filter(idx => answers[idx] === questions[idx]?.correctAnswer).length;
-    const wrongCount = Object.keys(answers).filter(idx => answers[idx] !== questions[idx]?.correctAnswer).length;
-    const blankCount = total - Object.keys(answers).length;
-
     return (
         <>
             <main style={{ maxWidth: '860px', width: '100%', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -101,22 +96,6 @@ export const ExamEngine = ({
                         borderRadius: '99px',
                         transition: 'width 0.3s ease'
                     }} />
-                </div>
-
-                {/* Mini-contador de resultados en tiempo real */}
-                <div style={{
-                    display: 'flex', justifyContent: 'center', gap: '1.5rem',
-                    padding: '0.4rem 0', fontSize: '0.8rem', fontWeight: '600',
-                }}>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#22c55e' }}>
-                        <Check size={14} /> {correctCount}
-                    </span>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: '#ef4444' }}>
-                        <X size={14} /> {wrongCount}
-                    </span>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', color: 'var(--color-text-muted)' }}>
-                        ○ {blankCount}
-                    </span>
                 </div>
 
                 {/* Tarjeta de Pregunta */}
