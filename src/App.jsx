@@ -180,6 +180,23 @@ function App() {
     setMode('results');
   };
 
+  // Repaso: recargar el examen solo con preguntas falladas o en blanco
+  const startReview = (type) => {
+    let filteredQuestions = [];
+    if (type === 'wrong') {
+      filteredQuestions = questions.filter((q, idx) => answers[idx] && answers[idx] !== q.correctAnswer);
+    } else if (type === 'blank') {
+      filteredQuestions = questions.filter((q, idx) => !answers[idx]);
+    } else if (type === 'both') {
+      filteredQuestions = questions.filter((q, idx) => !answers[idx] || answers[idx] !== q.correctAnswer);
+    }
+    if (filteredQuestions.length === 0) return;
+    setQuestions(filteredQuestions);
+    setCurrentIdx(0);
+    setAnswers({});
+    setMode('exam');
+  };
+
   const goToPrev = () => {
     if (currentIdx > 0) setCurrentIdx(currentIdx - 1);
   };
@@ -487,38 +504,92 @@ function App() {
         </React.Fragment>
       )}
 
-      {mode === 'results' && (
-        <main className="glass-panel text-center" style={{ maxWidth: '600px', width: '100%', padding: '3rem', background: 'var(--card-bg)', border: '1px solid var(--glass-border)' }}>
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', color: 'var(--color-text)' }}>Resultados del Test</h2>
+      {mode === 'results' && (() => {
+        const correctCount = Object.keys(answers).filter(idx => answers[idx] === questions[idx]?.correctAnswer).length;
+        const wrongCount = Object.keys(answers).filter(idx => answers[idx] !== questions[idx]?.correctAnswer).length;
+        const blankCount = questions.length - Object.keys(answers).length;
+        const totalQ = questions.length;
+        const pct = totalQ > 0 ? Math.round((correctCount / totalQ) * 100) : 0;
 
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '4rem', marginBottom: '3rem' }}>
-            <div className="stat">
-              <div style={{ fontSize: '3rem', fontWeight: 'bold', color: '#22c55e' }}>
-                {Object.keys(answers).filter(idx => answers[idx] === questions[idx].correctAnswer).length}
+        return (
+          <main className="glass-panel text-center" style={{ maxWidth: '600px', width: '100%', padding: '3rem', background: 'var(--card-bg)', border: '1px solid var(--glass-border)' }}>
+            <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--color-text)' }}>Resultados del Test</h2>
+            <p style={{ fontSize: '1.1rem', color: 'var(--color-text-muted)', marginBottom: '2rem' }}>
+              Nota: <strong style={{ color: pct >= 50 ? '#22c55e' : '#ef4444', fontSize: '1.3rem' }}>{pct}%</strong>
+            </p>
+
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '3rem', marginBottom: '2.5rem' }}>
+              <div className="stat">
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#22c55e' }}>
+                  {correctCount}
+                </div>
+                <p style={{ color: 'var(--color-text-muted)', textTransform: 'uppercase', marginTop: '0.3rem', fontWeight: '600', fontSize: '0.8rem' }}>Aciertos</p>
               </div>
-              <p style={{ color: 'var(--color-text-muted)', textTransform: 'uppercase', marginTop: '0.5rem', fontWeight: '600' }}>Aciertos</p>
+
+              <div className="stat">
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#ef4444' }}>
+                  {wrongCount}
+                </div>
+                <p style={{ color: 'var(--color-text-muted)', textTransform: 'uppercase', marginTop: '0.3rem', fontWeight: '600', fontSize: '0.8rem' }}>Fallos</p>
+              </div>
+
+              <div className="stat">
+                <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: 'var(--color-text-muted)' }}>
+                  {blankCount}
+                </div>
+                <p style={{ color: 'var(--color-text-muted)', textTransform: 'uppercase', marginTop: '0.3rem', fontWeight: '600', fontSize: '0.8rem' }}>En Blanco</p>
+              </div>
             </div>
 
-            <div className="stat">
-              <div style={{ fontSize: '3rem', fontWeight: 'bold', color: '#ef4444' }}>
-                {Object.keys(answers).filter(idx => answers[idx] !== questions[idx].correctAnswer).length}
-              </div>
-              <p style={{ color: 'var(--color-text-muted)', textTransform: 'uppercase', marginTop: '0.5rem', fontWeight: '600' }}>Fallos</p>
+            {/* Botones de repaso */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              {wrongCount > 0 && (
+                <button
+                  onClick={() => startReview('wrong')}
+                  style={{
+                    padding: '0.9rem 1.5rem', fontSize: '0.95rem', fontWeight: '500',
+                    background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)',
+                    borderRadius: '12px', cursor: 'pointer', color: '#f87171',
+                    transition: 'all 0.2s ease', width: '100%',
+                  }}
+                >
+                  🔄 Repasar Falladas ({wrongCount})
+                </button>
+              )}
+              {blankCount > 0 && (
+                <button
+                  onClick={() => startReview('blank')}
+                  style={{
+                    padding: '0.9rem 1.5rem', fontSize: '0.95rem', fontWeight: '500',
+                    background: 'rgba(148, 163, 184, 0.1)', border: '1px solid rgba(148, 163, 184, 0.3)',
+                    borderRadius: '12px', cursor: 'pointer', color: 'var(--color-text-muted)',
+                    transition: 'all 0.2s ease', width: '100%',
+                  }}
+                >
+                  📝 Completar En Blanco ({blankCount})
+                </button>
+              )}
+              {(wrongCount > 0 && blankCount > 0) && (
+                <button
+                  onClick={() => startReview('both')}
+                  style={{
+                    padding: '0.9rem 1.5rem', fontSize: '0.95rem', fontWeight: '500',
+                    background: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.3)',
+                    borderRadius: '12px', cursor: 'pointer', color: '#60a5fa',
+                    transition: 'all 0.2s ease', width: '100%',
+                  }}
+                >
+                  🎯 Repasar Todo ({wrongCount + blankCount})
+                </button>
+              )}
             </div>
 
-            <div className="stat">
-              <div style={{ fontSize: '3rem', fontWeight: 'bold', color: 'var(--color-text-muted)' }}>
-                {questions.length - Object.keys(answers).length}
-              </div>
-              <p style={{ color: 'var(--color-text-muted)', textTransform: 'uppercase', marginTop: '0.5rem', fontWeight: '600' }}>Blancos</p>
-            </div>
-          </div>
-
-          <button className="btn btn-primary" onClick={reset} style={{ padding: '1rem 3rem', fontSize: '1.1rem' }}>
-            <RotateCcw size={20} style={{ marginRight: '0.5rem' }} /> Volver a la Biblioteca
-          </button>
-        </main>
-      )}
+            <button className="btn btn-primary" onClick={reset} style={{ padding: '1rem 3rem', fontSize: '1rem', width: '100%' }}>
+              <RotateCcw size={18} style={{ marginRight: '0.5rem' }} /> Volver a la Biblioteca
+            </button>
+          </main>
+        );
+      })()}
     </div>
   );
 }
